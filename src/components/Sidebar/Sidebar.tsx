@@ -10,25 +10,9 @@ import { LiaFileInvoiceSolid } from 'react-icons/lia'
 import { LuMessageSquareDot } from 'react-icons/lu'
 import { MdOutlinePayment, MdSpaceDashboard } from 'react-icons/md'
 import { TbAutomation } from 'react-icons/tb'
+import { Link } from 'react-router-dom'
 import { useStore } from '../../store/useStoreSidebar'
-import type { SidebarNameType } from '../../types/SidebarNameType'
-
-const sidebarName: SidebarNameType = {
-	dashboard: 'Dashboard',
-	payment: 'Payment',
-	customers: 'Customers',
-	message: 'Message',
-	general: 'GENERAL',
-	tools: 'TOOLS',
-	product: 'Product',
-	invoice: 'Invoice',
-	analytics: 'Analytics',
-	automation: 'Automation',
-	support: 'SUPPORT',
-	settings: 'Settings',
-	security: 'Security',
-	help: 'Help'
-}
+import { sidebarName } from '../../types/useSidebarNames'
 
 export default function Sidebar() {
 	const isOpen = useStore(state => state.isOpen)
@@ -51,40 +35,40 @@ export default function Sidebar() {
 						{sidebarName.general}
 					</h2>
 					<li>
-						<a
+						<Link
 							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
-							href="#"
+							to="/dashboard"
 						>
 							<MdSpaceDashboard />
 							{sidebarName.dashboard}
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a
+						<Link
 							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
-							href="#"
+							to="/payment"
 						>
 							<MdOutlinePayment />
 							{sidebarName.payment}
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a
+						<Link
 							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
-							href="#"
+							to="/customers"
 						>
 							<AiOutlineCustomerService />
 							{sidebarName.customers}
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a
+						<Link
 							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
-							href="#"
+							to="/messages"
 						>
 							<LuMessageSquareDot />
 							{sidebarName.message}
-						</a>
+						</Link>
 					</li>
 				</ul>
 
