@@ -1,7 +1,6 @@
 import { Area, AreaChart, CartesianGrid, Tooltip, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import { RechartsDevtools } from '@recharts/devtools';
 
-// Типы для данных
 interface CountryData {
   name: string;
   gdp: number;
@@ -9,7 +8,6 @@ interface CountryData {
   imports: number;
 }
 
-// Тип для пропсов тултипа
 interface TooltipProps {
   active?: boolean;
   payload?: Array<{
@@ -21,7 +19,6 @@ interface TooltipProps {
   label?: string;
 }
 
-// Тип для пропсов оси
 interface AxisTickProps {
   x?: number;
   y?: number;
@@ -30,7 +27,6 @@ interface AxisTickProps {
   };
 }
 
-// Данные по странам в миллиардах долларов
 const countryData: CountryData[] = [
   {
     name: 'China',
@@ -76,7 +72,6 @@ const countryData: CountryData[] = [
   },
 ];
 
-// Кастомизированный тултип с форматированием в долларах
 const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
   if (active && payload && payload.length) {
     return (
@@ -117,7 +112,6 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
   return null;
 };
 
-// Кастомная метка оси Y с долларами
 const CustomYAxisTick = ({ x = 0, y = 0, payload }: AxisTickProps) => {
   if (!payload) return null;
   
@@ -135,7 +129,6 @@ const CustomYAxisTick = ({ x = 0, y = 0, payload }: AxisTickProps) => {
   );
 };
 
-// Кастомная метка оси X
 const CustomXAxisTick = ({ x = 0, y = 0, payload }: AxisTickProps) => {
   if (!payload) return null;
   
@@ -154,7 +147,6 @@ const CustomXAxisTick = ({ x = 0, y = 0, payload }: AxisTickProps) => {
   );
 };
 
-// Тип для пропсов компонента
 interface CountryAreaChartProps {
   isAnimationActive?: boolean;
 }
