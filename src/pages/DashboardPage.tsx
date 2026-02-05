@@ -1,14 +1,26 @@
 import {
+	ChevronDown,
 	Database,
 	Eye,
 	Info,
+	ListFilter,
 	TrendingDown,
 	TrendingUp,
 	Waypoints
 } from 'lucide-react'
-import type { dashboard } from '../types/dashboard'
+import { useState } from 'react'
 import SalesOverview from '../components/Sales/SalesOverview'
+import Total from '../components/Total/Total'
+import type { dashboard } from '../types/dashboard'
+import { Export } from '../types/exportName'
+import { filterName } from '../types/filterName'
+import { Download } from 'lucide-react';
+
+type Period = 'daily' | 'weekly' | 'monthly' | 'yearly'
+
 export default function DashboardPage() {
+	const [period, setPeriod] = useState<Period>('monthly')
+	const [open, setOpen] = useState(false)
 	const dashboard: dashboard = {
 		page: 'Page Views',
 		total: 'Total Revenue',
@@ -21,6 +33,54 @@ export default function DashboardPage() {
 	return (
 		<>
 			<h1 className="text-3xl ml-67">Dashboard</h1>
+			<div className="flex items-center justify-between ml-67 mt-4 w-113">
+				<div className="relative">
+					<button
+						onClick={() => setOpen(v => !v)}
+						className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-12 ml-252"
+					>
+						{period.charAt(0).toUpperCase() + period.slice(1)}
+						<ChevronDown size={16} />
+					</button>
+
+					{open && (
+						<div className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-20">
+							{(['daily', 'weekly', 'monthly', 'yearly'] as Period[]).map(p => (
+								<button
+									key={p}
+									onClick={() => {
+										setPeriod(p)
+										setOpen(false)
+									}}
+									className={`
+              w-full text-left px-3 py-2 text-sm
+              hover:bg-gray-100
+              ${period === p ? 'bg-gray-50 font-medium' : ''}
+            `}
+								>
+									{p.charAt(0).toUpperCase() + p.slice(1)}
+								</button>
+							))}
+						</div>
+					)}
+				</div>
+				<button className="flex items-center text-gray-500 gap-2 px-15 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-15 ml-2">
+					<span className="-ml-7">{filterName.name}</span>
+					<ListFilter
+						size={12}
+						className="-ml-16"
+					/>
+				</button>
+
+				<button className="flex items-center text-gray-500 gap-2 px-17 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-15 ml-2">
+					<span className="-ml-10">{Export.export}</span>
+					<Download
+						size={15}
+						className="-ml-18"
+					/>
+				</button>
+			</div>
+
 			<div className="border border-gray-200 p-3 w-113 rounded-[10px] ml-67 mt-5">
 				<Eye
 					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100"
@@ -31,7 +91,7 @@ export default function DashboardPage() {
 					size={20}
 				/>
 				<p className="ml-15 -mt-5.5">{dashboard.page}</p>
-				<button className="text-green-700 border border-green-300 rounded-[6px] ml-32 mt-7 w-20 pr-5 bg-green-100 text-[0.9rem]">
+				<button className="text-green-700 border border-green-300 rounded-md ml-32 mt-7 w-20 pr-5 bg-green-100 text-[0.9rem]">
 					15.8%
 					<TrendingUp
 						size={17}
@@ -50,7 +110,7 @@ export default function DashboardPage() {
 					size={20}
 				/>
 				<p className="ml-15 -mt-5.5">{dashboard.total}</p>
-				<button className="text-red-700 border border-red-300 rounded-[6px] ml-37 mt-7 w-20 pr-5 bg-red-100 text-[0.9rem]">
+				<button className="text-red-700 border border-red-300 rounded-md ml-37 mt-7 w-20 pr-5 bg-red-100 text-[0.9rem]">
 					34.0%
 					<TrendingDown
 						size={17}
@@ -69,7 +129,7 @@ export default function DashboardPage() {
 					size={20}
 				/>
 				<p className="ml-15 -mt-5.5">{dashboard.bounce}</p>
-				<button className="text-green-700 border border-green-300 rounded-[6px] ml-32 mt-7 w-20 pr-5 bg-green-100 text-[0.9rem]">
+				<button className="text-green-700 border border-green-300 rounded-md ml-32 mt-7 w-20 pr-5 bg-green-100 text-[0.9rem]">
 					24.2%
 					<TrendingUp
 						size={17}
@@ -78,7 +138,7 @@ export default function DashboardPage() {
 				</button>
 				<p className="ml-4 text-[2rem] -mt-9">{dashboard.percent}</p>
 			</div>
-
+			<Total />
 			<SalesOverview />
 		</>
 	)
