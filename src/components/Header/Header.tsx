@@ -11,13 +11,13 @@ import { headersName } from '../../types/headersName'
 
 export default function Header() {
 	const [open, setOpen] = useState(false)
-	const [selectedOption, setSelectedOption] = useState(null)
+	const [selectedOption, setSelectedOption] = useState<string | null>(null)
 
 	const logins = ['Login', 'Logout']
 
 	const toggleDropdown = () => setOpen(!open)
 
-	const handleOptionClick = (options: any) => {
+	const handleOptionClick = (options: string) => {
 		setSelectedOption(options)
 		setOpen(false)
 	}
@@ -93,8 +93,12 @@ export default function Header() {
 								))}
 							</ul>
 						)}
-						<h1 className="-mt-4">{headersName.name}</h1>
-						<p className="text-gray-400 text-sm mt-6 -ml-15">{headersName.job}</p>
+						<h1 className="-mt-4">
+							{headersName.name} {selectedOption && `(${selectedOption})`}
+						</h1>
+						<p className="text-gray-400 text-sm mt-6 -ml-15">
+							{headersName.job}
+						</p>
 					</div>
 				</div>
 			</header>
