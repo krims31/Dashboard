@@ -7,6 +7,7 @@ import {
 	Waypoints
 } from 'lucide-react'
 import type { dashboard } from '../types/dashboard'
+import SalesOverview from '../components/Sales/SalesOverview'
 export default function DashboardPage() {
 	const dashboard: dashboard = {
 		page: 'Page Views',
@@ -77,6 +78,8 @@ export default function DashboardPage() {
 				</button>
 				<p className="ml-4 text-[2rem] -mt-9">{dashboard.percent}</p>
 			</div>
+
+			<SalesOverview />
 		</>
 	)
 }
