@@ -16,6 +16,7 @@ import { Export } from '../types/exportName'
 import { filterName } from '../types/filterName'
 import { Download } from 'lucide-react';
 import SalesDistr from '../components/SalesDistrubition/SalesDistr'
+import ListIntegration from '../components/List/ListIntegration'
 
 type Period = 'daily' | 'weekly' | 'monthly' | 'yearly'
 
@@ -139,9 +140,13 @@ export default function DashboardPage() {
 				</button>
 				<p className="ml-4 text-[2rem] -mt-9">{dashboard.percent}</p>
 			</div>
+
+
+
 			<Total />
 			<SalesOverview />
 			<SalesDistr />
+			<ListIntegration />
 		</>
 	)
 }

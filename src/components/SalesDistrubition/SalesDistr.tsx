@@ -18,10 +18,10 @@ export default function SalesDistr() {
 			<div className="border border-gray-200 p-3 w-135 h-43 rounded-[10px] ml-67 mt-3">
 				<div className="flex items-center justify-between ml-67 mt-4 w-113">
 					<HardDrive
-						className="-mt-20 -ml-60 border-1xl border-gray-200 bg-gray-100"
+						className="-mt-23 -ml-62 border-1xl border-gray-200 bg-gray-100"
 						size={20}
 					/>
-					<h1 className="-ml-6 -mt-20">{sales.sale}</h1>
+					<h1 className="-ml-45 -mt-23">{sales.sale}</h1>
 					<div className="mt-4">
 						<SalesPieChart />
 						<PieLegend />
@@ -29,7 +29,7 @@ export default function SalesDistr() {
 					<div className="relative">
 						<button
 							onClick={() => setOpen(v => !v)}
-							className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-110 ml-18"
+							className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-16 -ml-80"
 						>
 							{period.charAt(0).toUpperCase() + period.slice(1)}
 							<ChevronDown size={16} />
