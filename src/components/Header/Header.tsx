@@ -34,12 +34,12 @@ export default function Header() {
 							type="search"
 							placeholder={headersName.search}
 							className="
-					bg-gray-50
+					bg-transparent
 					border border-gray-300
 					text-sm
 					rounded-lg
 					pl-9 pr-3 py-1.5
-					w-64
+					w-75
 					focus:ring-blue-500 focus:border-blue-500
 				"
 						/>

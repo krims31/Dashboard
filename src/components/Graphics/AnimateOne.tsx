@@ -155,7 +155,7 @@ export const CountryAreaChart = ({ isAnimationActive = true }: CountryAreaChartP
   <ResponsiveContainer width="100%" height={330}>
     <AreaChart
       data={countryData}
-      margin={{ top: 35, right: 30, left: 20, bottom: 20 }}
+      margin={{ top: 25, right: 30, left: 20, bottom: 20 }}
     >
       <defs>
         <linearGradient id="colorGdp" x1="0" y1="0" x2="0" y2="1">

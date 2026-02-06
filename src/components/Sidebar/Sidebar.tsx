@@ -20,14 +20,12 @@ export default function Sidebar() {
 
 	return (
 		<>
-			{/* Sidebar */}
 			<div
 				className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg p-6 z-50 transform transition-transform duration-300 ${
 					isOpen ? 'translate-x-0' : '-translate-x-full'
 				}`}
 			>
-				{/* Logo */}
-				<h1 className="text-2xl font-bold mb-6 text-gray-800">Nexus</h1>
+				<h1 className="text-2xl font-bold mb-6 text-[#5347CE]">Nexus</h1>
 
 				{/* General Section */}
 				<ul className="mb-6">

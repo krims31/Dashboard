@@ -15,6 +15,7 @@ import type { dashboard } from '../types/dashboard'
 import { Export } from '../types/exportName'
 import { filterName } from '../types/filterName'
 import { Download } from 'lucide-react';
+import SalesDistr from '../components/SalesDistrubition/SalesDistr'
 
 type Period = 'daily' | 'weekly' | 'monthly' | 'yearly'
 
@@ -33,11 +34,11 @@ export default function DashboardPage() {
 	return (
 		<>
 			<h1 className="text-3xl ml-67">Dashboard</h1>
-			<div className="flex items-center justify-between ml-67 mt-4 w-113">
+			<div className="flex items-center justify-between ml-67 mt-0 w-113">
 				<div className="relative">
 					<button
 						onClick={() => setOpen(v => !v)}
-						className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-12 ml-252"
+						className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-9 ml-252"
 					>
 						{period.charAt(0).toUpperCase() + period.slice(1)}
 						<ChevronDown size={16} />
@@ -64,7 +65,7 @@ export default function DashboardPage() {
 						</div>
 					)}
 				</div>
-				<button className="flex items-center text-gray-500 gap-2 px-15 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-15 ml-2">
+				<button className="flex items-center text-gray-500 gap-2 px-15 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-9 ml-2">
 					<span className="-ml-7">{filterName.name}</span>
 					<ListFilter
 						size={12}
@@ -72,7 +73,7 @@ export default function DashboardPage() {
 					/>
 				</button>
 
-				<button className="flex items-center text-gray-500 gap-2 px-17 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-15 ml-2">
+				<button className="flex items-center text-gray-500 gap-2 px-17 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-9 ml-2">
 					<span className="-ml-10">{Export.export}</span>
 					<Download
 						size={15}
@@ -140,6 +141,7 @@ export default function DashboardPage() {
 			</div>
 			<Total />
 			<SalesOverview />
+			<SalesDistr />
 		</>
 	)
 }

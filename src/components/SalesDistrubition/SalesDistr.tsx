@@ -1,36 +1,31 @@
-import { ChevronDown, TrendingUp, Users } from 'lucide-react'
+import { ChevronDown, HardDrive } from 'lucide-react'
 import { useState } from 'react'
+import { SalesPieChart } from '../../components/Graphics/PieDonut'
+import { PieLegend } from '../../data/data.donut'
 import type { ITotal } from '../../types/total'
-import { WeeklyBarChart } from '../Graphics/TotalGraph'
-
 type Period = 'daily' | 'weekly' | 'monthly' | 'yearly'
 
 const sales: ITotal = {
-	sale: 'Total Subscriber',
+	sale: 'Sales Distribution',
 	price: '$24,473'
 }
 
-export default function Total() {
+export default function SalesDistr() {
 	const [period, setPeriod] = useState<Period>('monthly')
 	const [open, setOpen] = useState(false)
 	return (
 		<>
-			<div className="border border-gray-200 p-3 w-123 h-115 rounded-[10px] ml-267 mt-5">
-				<Users
-					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100"
-					size={20}
-				/>
-				<h1 className="ml-15 -mt-5">{sales.sale}</h1>
-				<p className="ml-6 mt-5 text-3xl">{sales.price}</p>
-				<button className="text-green-700 border border-green-300 rounded-md ml-6 mt-4 w-20 pr-5 bg-green-100 text-[0.9rem]">
-					8.3%
-					<TrendingUp
-						size={17}
-						className="ml-14 -mt-5"
-					/>
-				</button>
-				<WeeklyBarChart />
+			<div className="border border-gray-200 p-3 w-135 h-43 rounded-[10px] ml-67 mt-3">
 				<div className="flex items-center justify-between ml-67 mt-4 w-113">
+					<HardDrive
+						className="-mt-20 -ml-60 border-1xl border-gray-200 bg-gray-100"
+						size={20}
+					/>
+					<h1 className="-ml-6 -mt-20">{sales.sale}</h1>
+					<div className="mt-4">
+						<SalesPieChart />
+						<PieLegend />
+					</div>
 					<div className="relative">
 						<button
 							onClick={() => setOpen(v => !v)}

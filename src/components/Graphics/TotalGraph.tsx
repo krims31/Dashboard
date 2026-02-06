@@ -90,10 +90,10 @@ const CustomTooltip = ({
 
 export const WeeklyBarChart = () => {
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={310}>
       <BarChart
         data={data}
-        margin={{ top: 50, right: 20, left: 0, bottom: -13 }}
+        margin={{ top: 28, right: 20, left: 0, bottom: -10 }}
       >
         <CartesianGrid
           strokeDasharray="3 3"

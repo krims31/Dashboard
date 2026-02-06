@@ -11,7 +11,7 @@ const sales: ISales = {
 export default function SalesOverview() {
 	return (
 		<>
-			<div className="border border-gray-200 p-3 w-195 h-120 rounded-[10px] ml-67 -mt-120">
+			<div className="border border-gray-200 p-3 w-195 h-115 rounded-[10px] ml-67 -mt-115">
 				<ChartNoAxesColumn
 					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100"
 					size={20}
