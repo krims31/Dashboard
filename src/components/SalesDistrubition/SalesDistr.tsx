@@ -18,10 +18,10 @@ export default function SalesDistr() {
 			<div className="border border-gray-200 p-3 w-135 h-43 rounded-[10px] ml-67 mt-3">
 				<div className="flex items-center justify-between ml-67 mt-4 w-113">
 					<HardDrive
-						className="-mt-23 -ml-62 border-1xl border-gray-200 bg-gray-100"
+						className="-mt-25 -ml-62 border-1xl border-gray-200 bg-gray-100"
 						size={20}
 					/>
-					<h1 className="-ml-45 -mt-23">{sales.sale}</h1>
+					<h1 className="-ml-45 -mt-25">{sales.sale}</h1>
 					<div className="mt-4">
 						<SalesPieChart />
 						<PieLegend />
