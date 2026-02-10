@@ -10,7 +10,7 @@ import {
 export const SalesPieChart = () => {
   return (
     <div className="w-full h-40 -mt-8 -ml-45">
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="110%" height="100%">
         <PieChart>
           <Pie
             data={pieData}

@@ -30,14 +30,14 @@ export default function SalesOverview() {
 					<span className="-ml-7">{filterName.name}</span>
 					<ListFilter
 						size={12}
-						className="-ml-16"
+						className="-ml-14"
 					/>
 				</button>
 				<button className="flex items-center text-gray-500 gap-2 px-15 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-8.5 ml-161">
 					<span className="-ml-7">{sort.sort}</span>
 					<ArrowUpDown
 						size={15}
-						className="-ml-15"
+						className="-ml-13"
 					/>
 				</button>
 				<button className="flex items-center text-gray-500 gap-2 px-2 py-2 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-8.5 ml-181">

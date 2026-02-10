@@ -5,4 +5,7 @@ export interface IList {
 	app: string
 	type: string
 	rate: string
+	img: string;
+	finance: string;
+	marketplace: string
 }

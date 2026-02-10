@@ -70,7 +70,7 @@ export default function DashboardPage() {
 					<span className="-ml-7">{filterName.name}</span>
 					<ListFilter
 						size={12}
-						className="-ml-16"
+						className="-ml-14"
 					/>
 				</button>
 
@@ -78,7 +78,7 @@ export default function DashboardPage() {
 					<span className="-ml-10">{Export.export}</span>
 					<Download
 						size={15}
-						className="-ml-18"
+						className="-ml-16"
 					/>
 				</button>
 			</div>
