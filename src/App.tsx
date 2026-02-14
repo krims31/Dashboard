@@ -36,6 +36,11 @@ function App() {
 				path="/"
 				element={<Navigate to="/dashboard" />}
 			/>
+
+			<Route
+				path="*"
+				element={<div className="flex justify-center text-center mt-100 text-3xl ">404 - Страница не найдена</div>}
+			/>
 		</Routes>
 	)
 }
