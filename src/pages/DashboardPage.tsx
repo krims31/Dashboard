@@ -34,7 +34,7 @@ export default function DashboardPage() {
 
 	return (
 		<>
-			<h1 className="text-3xl ml-67">Dashboard</h1>
+			<h1 className="text-3xl lg:ml-64">Dashboard</h1>
 			<div className="flex items-center justify-between ml-67 mt-0 w-113">
 				<div className="relative">
 					<button
@@ -140,8 +140,6 @@ export default function DashboardPage() {
 				</button>
 				<p className="ml-4 text-[2rem] -mt-9">{dashboard.percent}</p>
 			</div>
-
-
 
 			<Total />
 			<SalesOverview />

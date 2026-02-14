@@ -9,8 +9,8 @@ const list: IList = {
 	type: 'TYPE',
 	rate: 'RATE',
 	img: 'https://static.wixstatic.com/media/bec40d_b07e57da97d9472dbfd6719a3b3a3b80~mv2.png',
-	finance: "Finance",
-	marketplace: "Marketplace",
+	finance: 'Finance',
+	marketplace: 'Marketplace'
 }
 
 export default function ListIntegration() {
@@ -50,28 +50,44 @@ export default function ListIntegration() {
 
 					<p className="text-sm text-gray-500 -mt-7 ml-85 text-center">40%</p>
 
-					<p className="text-md text-gray-500 -mt-5 -ml-12 text-center">{list.finance}</p>
+					<p className="text-md text-gray-500 -mt-5 -ml-12 text-center">
+						{list.finance}
+					</p>
 
-					<p className="text-md text-gray-500 -mt-6 ml-135 text-center">$650.00</p>
+					<p className="text-md text-gray-500 -mt-6 ml-135 text-center">
+						$650.00
+					</p>
+
+					<p className="text-md text-gray-500 -mt-6 -ml-125 text-center">
+						Wallet
+					</p>
 				</div>
 				<div className="border border-gray-100 rounded-sm mt-2 h-8">
 					<input
 						type="checkbox"
 						className="h-4 w-4 mt-2 ml-5 border-2 border-gray-400 rounded-sm"
 					/>
-					
+
 					<input
 						type="range"
 						min="0"
 						max="100"
 						value="80"
-						className="w-20 h-1 ml-95 absolute top-227 accent-[#887CFD] cursor-pointer"
+						className="w-20 h-1 ml-95 absolute top-226 accent-[#887CFD] cursor-pointer"
 					/>
 					<p className="text-sm text-gray-500 -mt-6 ml-85 text-center">80%</p>
 
-					<p className="text-md text-gray-500 -mt-5 -ml-12 text-center">{list.marketplace}</p>
+					<p className="text-md text-gray-500 -mt-6 -ml-12 text-center">
+						{list.marketplace}
+					</p>
 
-					<p className="text-md text-gray-500 -mt-6 ml-135 text-center">$720.50</p>
+					<p className="text-md text-gray-500 -mt-6 ml-135 text-center">
+						$720.50
+					</p>
+
+					<p className="text-md text-gray-500 -mt-6 -ml-125 text-center">
+						Amazon
+					</p>
 				</div>
 			</div>
 		</>

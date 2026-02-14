@@ -23,9 +23,9 @@ export default function Header() {
 	}
 	return (
 		<>
-			<header className="w-415 bg-white border-b border-gray-200 ml-64">
-				<div className="flex items-center justify-between px-6 py-3 relative">
-					<div className="relative">
+			<header className=" bg-white border-b border-gray-200 lg:pl-64">
+				<div className="flex items-center justify-between px-4 md:px-6 py-3">
+					<div className="relative flex-1 max-w-xs">
 						<IoSearch
 							size={17}
 							className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -45,19 +45,21 @@ export default function Header() {
 						/>
 					</div>
 
-					<div className="flex items-center gap-4 relative right-80">
-						<IoGiftOutline
-							size={20}
-							className="cursor-pointer"
-						/>
-						<IoNotificationsOutline
-							size={20}
-							className="cursor-pointer"
-						/>
-						<IoIosAddCircleOutline
-							size={20}
-							className="cursor-pointer"
-						/>
+					<div className="flex items-center gap-2 md:gap-4 ml-4">
+						<div className="hidden sm:flex items-center gap-3">
+							<IoGiftOutline
+								size={20}
+								className="cursor-pointer"
+							/>
+							<IoNotificationsOutline
+								size={20}
+								className="cursor-pointer"
+							/>
+							<IoIosAddCircleOutline
+								size={20}
+								className="cursor-pointer"
+							/>
+						</div>
 
 						<button onClick={toggleDropdown}>
 							<CgProfile size={20} />
@@ -93,12 +95,12 @@ export default function Header() {
 								))}
 							</ul>
 						)}
-						<h1 className="-mt-4">
-							{headersName.name} {selectedOption && `(${selectedOption})`}
-						</h1>
-						<p className="text-gray-400 text-sm mt-6 -ml-15">
-							{headersName.job}
-						</p>
+						<div className="hidden md:block">
+							<h1 className="text-sm font-medium leading-none">
+								{headersName.name} {selectedOption && `(${selectedOption})`}
+							</h1>
+							<p className="text-gray-400 text-xs mt-1">{headersName.job}</p>
+						</div>
 					</div>
 				</div>
 			</header>

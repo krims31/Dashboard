@@ -1,23 +1,42 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
+import Login from './auth/Login'
 import Header from './components/Header/Header'
 import Sidebar from './components/Sidebar/Sidebar'
 import DashboardPage from './pages/DashboardPage'
 
+const DashboardLayout = ({ children }: { children: React.ReactNode }) => (
+	<div className="app-wrapper">
+		<Header />
+		<div className="flex">
+			<Sidebar />
+			<main className="flex-1 p-6">{children}</main>
+		</div>
+	</div>
+)
+
 function App() {
 	return (
-		<>
-			<Header />
-			<Sidebar />
-			<main className="flex-1 p-6">
-				<Routes>
-					<Route
-						path="/dashboard"
-						element={<DashboardPage />}
-					/>
-				</Routes>
-			</main>
-		</>
+		<Routes>
+			<Route
+				path="/login"
+				element={<Login />}
+			/>
+
+			<Route
+				path="/dashboard"
+				element={
+					<DashboardLayout>
+						<DashboardPage />
+					</DashboardLayout>
+				}
+			/>
+
+			<Route
+				path="/"
+				element={<Navigate to="/dashboard" />}
+			/>
+		</Routes>
 	)
 }
 
