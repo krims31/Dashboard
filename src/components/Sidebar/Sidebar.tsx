@@ -164,7 +164,7 @@ export default function Sidebar() {
 
 			{/* Floating Toggle Button */}
 			<button
-				className={`fixed top-6 left-0 z-50 p-2 text-2xl rounded-full transition-all duration-300 ${
+				className={`fixed top-2 left-0 z-50 p-2 text-2xl rounded-full transition-all duration-300 ${
 					isOpen ? 'left-54' : 'left-0'
 				}`}
 				onClick={toggleOpen}

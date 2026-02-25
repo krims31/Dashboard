@@ -1,6 +1,7 @@
 import {
 	ChevronDown,
 	Database,
+	Download,
 	Eye,
 	Info,
 	ListFilter,
@@ -9,14 +10,13 @@ import {
 	Waypoints
 } from 'lucide-react'
 import { useState } from 'react'
+import ListIntegration from '../components/List/ListIntegration'
 import SalesOverview from '../components/Sales/SalesOverview'
+import SalesDistr from '../components/SalesDistrubition/SalesDistr'
 import Total from '../components/Total/Total'
 import type { dashboard } from '../types/dashboard'
 import { Export } from '../types/exportName'
 import { filterName } from '../types/filterName'
-import { Download } from 'lucide-react';
-import SalesDistr from '../components/SalesDistrubition/SalesDistr'
-import ListIntegration from '../components/List/ListIntegration'
 
 type Period = 'daily' | 'weekly' | 'monthly' | 'yearly'
 
@@ -35,7 +35,11 @@ export default function DashboardPage() {
 	return (
 		<>
 			<h1 className="text-3xl lg:ml-64">Dashboard</h1>
-			<div className="flex items-center justify-between ml-67 mt-0 w-113">
+			<div
+				className="flex items-center justify-between 
+           w-full ml-0 mt-4 
+           md:ml-67 md:mt-0 md:w-113"
+			>
 				<div className="relative">
 					<button
 						onClick={() => setOpen(v => !v)}
