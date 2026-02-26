@@ -7,7 +7,7 @@ import type { ILogin } from '../types/login'
 export default function Login() {
 	const navigate = useNavigate()
 	const [serverError, setServerError] = useState<string | null>('')
-	const [isLoading, setIsLoading] = useState<boolean>(false)
+	// const [isLoading, setIsLoading] = useState<boolean>(false)
 	const [visible, setVisible] = useState<boolean>(false)
 	const { register, handleSubmit, formState } = useForm<ILogin>({
 		mode: 'onChange'
@@ -18,8 +18,9 @@ export default function Login() {
 
 	const onSubmit: SubmitHandler<ILogin> = async (data: ILogin, e) => {
 		e?.preventDefault()
-		setIsLoading(true)
-		setServerError('')
+		// setIsLoading(true)
+		// setServerError('')
+		navigate('/dashboard')
 
 		try {
 			const response = await fetch('http://localhost:3000/login', {
@@ -97,10 +98,10 @@ export default function Login() {
 					)}
 					<button
 						type="submit"
-						disabled={isLoading}
+						// disabled={isLoading}
 						className="mt-10 p-4 text-2xl font-bold uppercase tracking-widest text-[#1a1a1a] bg-amber-300 rounded-xl hover:bg-amber-100 hover:shadow-[0_0_20px_rgba(252,211,77,0.5)] active:scale-95 transition-all duration-300 cursor-pointer"
 					>
-						{isLoading ? 'Вход...' : 'Login'}
+						{/* {isLoading ? 'Вход...' : 'Login'} */}
 					</button>
 				</form>
 			</div>

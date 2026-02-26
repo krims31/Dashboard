@@ -23,6 +23,7 @@ type Period = 'daily' | 'weekly' | 'monthly' | 'yearly'
 export default function DashboardPage() {
 	const [period, setPeriod] = useState<Period>('monthly')
 	const [open, setOpen] = useState(false)
+
 	const dashboard: dashboard = {
 		page: 'Page Views',
 		total: 'Total Revenue',
