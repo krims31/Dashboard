@@ -34,8 +34,8 @@ export default function DashboardPage() {
 	}
 
 	return (
-		<>
-			<h1 className="text-3xl lg:ml-64">Dashboard</h1>
+		<div className="max-2xl:max-w-[1440px] max-2xl:mx-auto px-4 max-2xl:overflow-x-hidden">
+			<h1 className="text-3xl max-2xl:ml-0 ml-68">Dashboard</h1>
 			<div
 				className="flex items-center justify-between 
            w-full ml-0 mt-4 
@@ -44,7 +44,7 @@ export default function DashboardPage() {
 				<div className="relative">
 					<button
 						onClick={() => setOpen(v => !v)}
-						className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-9 ml-252"
+						className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-9 ml-252 max-2xl:ml-160"
 					>
 						{period.charAt(0).toUpperCase() + period.slice(1)}
 						<ChevronDown size={16} />
@@ -71,7 +71,7 @@ export default function DashboardPage() {
 						</div>
 					)}
 				</div>
-				<button className="flex items-center text-gray-500 gap-2 px-15 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-9 ml-2">
+				<button className="flex items-center text-gray-500 gap-2 px-15 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-9 ml-2 max-2xl:ml-2 max-2xl:-mt-9">
 					<span className="-ml-7">{filterName.name}</span>
 					<ListFilter
 						size={12}
@@ -88,13 +88,13 @@ export default function DashboardPage() {
 				</button>
 			</div>
 
-			<div className="border border-gray-200 p-3 w-113 rounded-[10px] ml-67 mt-5">
+			<div className="border border-gray-200 p-3 w-100 rounded-[10px] ml-67 mt-5 max-2xl:-ml-3">
 				<Eye
 					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100"
 					size={20}
 				/>
 				<Info
-					className="text-gray-400 cursor-pointer -mt-5.5 ml-99"
+					className="text-gray-400 cursor-pointer -mt-5.5 ml-85 max-2xl:ml-85"
 					size={20}
 				/>
 				<p className="ml-15 -mt-5.5">{dashboard.page}</p>
@@ -107,7 +107,7 @@ export default function DashboardPage() {
 				</button>
 				<p className="ml-4 text-[2rem] -mt-9">{dashboard.price}</p>
 			</div>
-			<div className="border border-gray-200 p-3 w-100 rounded-[10px] ml-185 -mt-29">
+			<div className="border border-gray-200 p-3 w-100 rounded-[10px] ml-180 -mt-29 max-2xl:ml-101">
 				<Database
 					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100"
 					size={20}
@@ -126,7 +126,7 @@ export default function DashboardPage() {
 				</button>
 				<p className="ml-4 text-[2rem] -mt-9">{dashboard.price2}</p>
 			</div>
-			<div className="border border-gray-200 p-3 w-100 rounded-[10px] ml-290 -mt-29">
+			<div className="border border-gray-200 p-3 w-100 rounded-[10px] ml-290 -mt-29 max-2xl:ml-205">
 				<Waypoints
 					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100"
 					size={20}
@@ -150,6 +150,6 @@ export default function DashboardPage() {
 			<SalesOverview />
 			<SalesDistr />
 			<ListIntegration />
-		</>
+		</div>
 	)
 }

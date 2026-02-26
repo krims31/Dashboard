@@ -15,7 +15,7 @@ export default function SalesDistr() {
 	const [open, setOpen] = useState(false)
 	return (
 		<>
-			<div className="border border-gray-200 p-3 w-135 h-43 rounded-[10px] ml-67 mt-3">
+			<div className="border border-gray-200 p-3 w-135 h-43 rounded-[10px] ml-67 mt-3 max-2xl:-ml-3">
 				<div className="flex items-center justify-between ml-67 mt-4 w-113">
 					<HardDrive
 						className="-mt-25 -ml-62 border-1xl border-gray-200 bg-gray-100"

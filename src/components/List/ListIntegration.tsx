@@ -16,13 +16,13 @@ const list: IList = {
 export default function ListIntegration() {
 	return (
 		<>
-			<div className="border border-gray-200 p-3 w-182 h-42 rounded-[10px] ml-208 -mt-43">
+			<div className="border border-gray-200 p-3 w-182 h-42 rounded-[10px] ml-208 -mt-43 max-2xl:ml-135 max-2xl:w-170">
 				<HardDrive
 					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100"
 					size={20}
 				/>
 				<h1 className="ml-15 -mt-5.5">{list.sale}</h1>
-				<p className="ml-160 -mt-6 text-[#887CFD] hover:text-[black] cursor-pointer transition 0.3s ease transform duration-300">
+				<p className="ml-160 -mt-6 text-[#887CFD] hover:text-[black] cursor-pointer transition 0.3s ease transform duration-300 max-2xl:ml-150">
 					{list.seeall}
 				</p>
 				<div className="border border-gray-100 bg-gray-50 rounded-sm mt-1 w-full h-8">
@@ -45,10 +45,10 @@ export default function ListIntegration() {
 						min="0"
 						max="100"
 						value="40"
-						className="w-20 h-1 ml-95 absolute top-216 accent-[#887CFD] cursor-pointer"
+						className="w-20 h-1 ml-95 max-2xl:mt-0 absolute top-214 accent-[#887CFD] cursor-pointer"
 					/>
 
-					<p className="text-sm text-gray-500 -mt-7 ml-85 text-center">40%</p>
+					<p className="text-sm text-gray-500 -mt-7 ml-85 text-center max-2xl:ml-100 max-2xl:-mt-6">40%</p>
 
 					<p className="text-md text-gray-500 -mt-5 -ml-12 text-center">
 						{list.finance}
@@ -73,9 +73,9 @@ export default function ListIntegration() {
 						min="0"
 						max="100"
 						value="80"
-						className="w-20 h-1 ml-95 absolute top-226 accent-[#887CFD] cursor-pointer"
+						className="w-20 h-1 ml-95 absolute top-224 accent-[#887CFD] cursor-pointer"
 					/>
-					<p className="text-sm text-gray-500 -mt-6 ml-85 text-center">80%</p>
+					<p className="text-sm text-gray-500 -mt-6 ml-85 text-center max-2xl:ml-100 max-2xl:-mt-6">80%</p>
 
 					<p className="text-md text-gray-500 -mt-6 -ml-12 text-center">
 						{list.marketplace}

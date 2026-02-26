@@ -45,7 +45,7 @@ function Header() {
 	}, [])
 	return (
 		<>
-			<header className=" bg-white border-b border-gray-200 lg:pl-64">
+			<header className=" bg-white border-b border-gray-200 max-2xl:pl-64 pl-65">
 				<div className="flex items-center justify-between px-4 md:px-6 py-3">
 					<div className="relative flex-1 max-w-xs">
 						<IoSearch
@@ -67,8 +67,8 @@ function Header() {
 						/>
 					</div>
 
-					<div className="flex items-center gap-2 md:gap-4 ml-4">
-						<div className="hidden sm:flex items-center gap-3">
+					<div className="flex items-center gap-2 ml-4">
+						<div className="hidden sm:flex items-center gap-3 max-2xl:-ml-50">
 							<IoGiftOutline
 								size={20}
 								className="cursor-pointer"

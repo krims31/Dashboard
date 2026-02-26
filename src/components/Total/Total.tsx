@@ -15,7 +15,7 @@ export default function Total() {
 	const [open, setOpen] = useState(false)
 	return (
 		<>
-			<div className="border border-gray-200 p-3 w-123 h-115 rounded-[10px] ml-267 mt-5">
+			<div className="border border-gray-200 p-3 w-123 h-115 rounded-[10px] ml-267 mt-5 max-2xl:ml-195 max-2xl:w-110">
 				<Users
 					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100"
 					size={20}
@@ -34,7 +34,7 @@ export default function Total() {
 					<div className="relative">
 						<button
 							onClick={() => setOpen(v => !v)}
-							className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-110 ml-18"
+							className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-112 ml-18 max-2xl:ml-5 max-2xl:-mt-112"
 						>
 							{period.charAt(0).toUpperCase() + period.slice(1)}
 							<ChevronDown size={16} />
