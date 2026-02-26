@@ -101,6 +101,7 @@ export default function Login() {
 						// disabled={isLoading}
 						className="mt-10 p-4 text-2xl font-bold uppercase tracking-widest text-[#1a1a1a] bg-amber-300 rounded-xl hover:bg-amber-100 hover:shadow-[0_0_20px_rgba(252,211,77,0.5)] active:scale-95 transition-all duration-300 cursor-pointer"
 					>
+						Login
 						{/* {isLoading ? 'Вход...' : 'Login'} */}
 					</button>
 				</form>
