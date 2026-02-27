@@ -1,97 +1,111 @@
-import React, { useEffect, useState, useRef } from 'react';
-import ReactApexChart from 'react-apexcharts';
-import ApexCharts from 'apexcharts';
-import type { ApexOptions } from 'apexcharts';
+import type { ApexOptions } from 'apexcharts'
+import React, { useEffect, useState } from 'react'
+import ReactApexChart from 'react-apexcharts'
 
-// Тип для точки данных
 interface DataPoint {
-  x: number;
-  y: number;
+	x: number
+	y: number
 }
 
-const XAXISRANGE = 30000; // 30 секунд
+type ApexAxisChartSeries = {
+	name: string
+	data: DataPoint[]
+}[]
+
+const XAXISRANGE = 30000
+
+const generateInitialData = (): DataPoint[] => {
+	const now = Date.now()
+	const data: DataPoint[] = []
+
+	for (let i = 0; i < 30; i++) {
+		data.push({
+			x: now - (30 - i) * 1000,
+			y: Math.floor(Math.random() * 80) + 10
+		})
+	}
+
+	return data
+}
 
 const RealtimeChart: React.FC = () => {
-  const dataRef = useRef<DataPoint[]>([]);
-  const lastDateRef = useRef<number>(new Date().getTime());
+	const [series, setSeries] = useState<ApexAxisChartSeries>([
+		{
+			name: 'Dynamic Data',
+			data: generateInitialData()
+		}
+	])
 
-  // Явно типизируем настройки
-  const [options] = useState<ApexOptions>({
-    chart: {
-      id: 'realtime',
-      type: 'line',
-      animations: {
-        enabled: true,
-        easing: 'linear',
-        dynamicAnimation: {
-          speed: 1000
-        }
-      },
-      toolbar: { show: false },
-      zoom: { enabled: false }
-    },
-    stroke: { curve: 'smooth', width: 3 },
-    xaxis: {
-      type: 'datetime',
-      range: XAXISRANGE
-    },
-    yaxis: { max: 100, min: 0 },
-    legend: { show: false }
-  });
+	const options: ApexOptions = {
+		chart: {
+			id: 'realtime',
+			type: 'line',
+			animations: {
+				enabled: true,
+				dynamicAnimation: {
+					enabled: true,
+					speed: 1000
+				}
+			},
+			toolbar: { show: false },
+			zoom: { enabled: false }
+		},
+		stroke: {
+			curve: 'smooth',
+			width: 3
+		},
+		xaxis: {
+			type: 'datetime',
+			range: XAXISRANGE,
+			labels: {
+				datetimeUTC: false
+			}
+		},
+		yaxis: {
+			min: 0,
+			max: 100
+		},
+		legend: { show: false },
+		grid: {
+			strokeDashArray: 4
+		}
+	}
 
-  // Типизируем серии данных
-  const [series, setSeries] = useState<ApexAxisChartSeries>([{ data: [] }]);
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setSeries(prev => {
+				const lastData = prev[0].data
+				const lastX = lastData[lastData.length - 1].x
 
-  useEffect(() => {
-    // 1. Предзаполнение данных
-    const initialData: DataPoint[] = [];
-    let time = new Date().getTime();
-    
-    for (let i = 0; i < 30; i++) {
-      time += 1000;
-      initialData.push({
-        x: time,
-        y: Math.floor(Math.random() * 80) + 10
-      });
-    }
-    
-    dataRef.current = initialData;
-    lastDateRef.current = time;
-    setSeries([{ data: initialData }]);
+				const newPoint: DataPoint = {
+					x: lastX + 1000,
+					y: Math.floor(Math.random() * 80) + 10
+				}
 
-    // 2. Цикл обновления
-    const interval = setInterval(() => {
-      lastDateRef.current += 1000;
-      const newDataPoint: DataPoint = {
-        x: lastDateRef.current,
-        y: Math.floor(Math.random() * 80) + 10
-      };
+				const updatedData = [...lastData, newPoint].slice(-50)
 
-      dataRef.current.push(newDataPoint);
-      if (dataRef.current.length > 50) {
-        dataRef.current.shift();
-      }
+				return [
+					{
+						name: 'Dynamic Data',
+						data: updatedData
+					}
+				]
+			})
+		}, 1000)
 
-      // Вызов через библиотеку с указанием ID чарта
-      ApexCharts.exec('realtime', 'updateSeries', [{
-        data: dataRef.current
-      }]);
-    }, 1000);
+		return () => clearInterval(interval)
+	}, [])
 
-    return () => clearInterval(interval);
-  }, []);
+	return (
+		<div className="w-full">
+			<ReactApexChart
+				options={options}
+				series={series}
+				type="line"
+				height={300}
+			/>
+		</div>
+	)
+}
 
-  return (
-    <div id="chart">
-      <ReactApexChart 
-        options={options} 
-        series={series} 
-        type="line" 
-        height={310} 
-      />
-    </div>
-  );
-};
-
-export default RealtimeChart;
-
+export default RealtimeChart
