@@ -7,6 +7,8 @@ import {
 	IoSearch
 } from 'react-icons/io5'
 import { useNavigate } from 'react-router-dom'
+import { Notification } from '../../data/notification'
+import useNotification from '../../hooks/useNotification'
 import { headersName } from '../../types/headersName'
 
 function Header() {
@@ -14,6 +16,13 @@ function Header() {
 	const [open, setOpen] = useState(false)
 	const [isLoggedIn, setIsLoggedIn] = useState(false)
 	const [selectedOption, setSelectedOption] = useState('')
+
+	const {
+		openNotification,
+		setNotificationOpen,
+		toggleNotification,
+		notificationRef
+	} = useNotification()
 
 	const handleLogout = async () => {
 		try {
@@ -68,15 +77,63 @@ function Header() {
 					</div>
 
 					<div className="flex items-center gap-2 ml-4">
-						<div className="hidden sm:flex items-center gap-3 max-2xl:-ml-50">
+						<div className="hidden sm:flex items-center gap-3 max-2xl:-ml-50 max-xl:ml-0">
 							<IoGiftOutline
 								size={20}
 								className="cursor-pointer"
 							/>
-							<IoNotificationsOutline
-								size={20}
-								className="cursor-pointer"
-							/>
+							<div
+								className="relative inline-block"
+								ref={notificationRef}
+							>
+								<button
+									onClick={toggleNotification}
+									className="mt-2"
+								>
+									<IoNotificationsOutline
+										size={20}
+										className="cursor-pointer"
+									/>
+								</button>
+
+								{openNotification && (
+									<div className="absolute right-0 mt-1 w-40 bg-white border border-gray-300 rounded-md shadow-lg z-50 overflow-hidden">
+										<button
+											onClick={() => {
+												console.log('Notification')
+												toggleNotification()
+											}}
+											className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 gap-2"
+										>
+											<span>{Notification.notification}</span>
+										</button>
+
+										<div className="border-t border-gray-100"></div>
+
+										<button
+											onClick={() => {
+												console.log('Notification')
+												toggleNotification()
+											}}
+											className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 gap-2"
+										>
+											<span>{Notification.title}</span>
+										</button>
+
+										<div className="border-t border-gray-100"></div>
+
+										<button
+											onClick={() => {
+												console.log('Notification')
+												toggleNotification()
+											}}
+											className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 gap-2"
+										>
+											<span>{Notification.description}</span>
+										</button>
+									</div>
+								)}
+							</div>
 							<IoIosAddCircleOutline
 								size={20}
 								className="cursor-pointer"

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { SalesPieChart } from '../../components/Graphics/PieDonut'
 import { PieLegend } from '../../data/data.donut'
 import type { ITotal } from '../../types/total'
+
 type Period = 'daily' | 'weekly' | 'monthly' | 'yearly'
 
 const sales: ITotal = {
