@@ -17,7 +17,8 @@ export default function Total() {
 		<>
 			<div className="border border-gray-200 p-3 w-123 h-115 rounded-[10px] ml-267 mt-5 max-2xl:ml-195 max-2xl:w-110">
 				<Users
-					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100"
+					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
 					size={20}
 				/>
 				<h1 className="ml-15 -mt-5">{sales.sale}</h1>
@@ -34,14 +35,15 @@ export default function Total() {
 					<div className="relative">
 						<button
 							onClick={() => setOpen(v => !v)}
-							className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-112 ml-18 max-2xl:ml-5 max-2xl:-mt-112"
+							className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-112 ml-18 max-2xl:ml-5 max-2xl:-mt-112 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
 						>
 							{period.charAt(0).toUpperCase() + period.slice(1)}
 							<ChevronDown size={16} />
 						</button>
 
 						{open && (
-							<div className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-20">
+							<div className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-20 dark:bg-sidebar dark:border-sidebar-border">
 								{(['daily', 'weekly', 'monthly', 'yearly'] as Period[]).map(
 									p => (
 										<button

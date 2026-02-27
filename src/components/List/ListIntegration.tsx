@@ -18,14 +18,16 @@ export default function ListIntegration() {
 		<>
 			<div className="border border-gray-200 p-3 w-182 h-42 rounded-[10px] ml-208 -mt-43 max-2xl:ml-135 max-2xl:w-170">
 				<HardDrive
-					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100"
+					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
 					size={20}
 				/>
 				<h1 className="ml-15 -mt-5.5">{list.sale}</h1>
 				<p className="ml-160 -mt-6 text-[#887CFD] hover:text-[black] cursor-pointer transition 0.3s ease transform duration-300 max-2xl:ml-150">
 					{list.seeall}
 				</p>
-				<div className="border border-gray-100 bg-gray-50 rounded-sm mt-1 w-full h-8">
+				<div className="border border-gray-100 bg-gray-50 rounded-sm mt-1 w-full h-8 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary">
 					<input
 						type="checkbox"
 						className="h-4 w-4 mt-2 ml-5 border-2 border-gray-400 rounded-sm"

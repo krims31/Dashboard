@@ -19,7 +19,8 @@ export default function SalesDistr() {
 			<div className="border border-gray-200 p-3 w-135 h-43 rounded-[10px] ml-67 mt-3 max-2xl:-ml-3">
 				<div className="flex items-center justify-between ml-67 mt-4 w-113">
 					<HardDrive
-						className="-mt-25 -ml-62 border-1xl border-gray-200 bg-gray-100"
+						className="-mt-25 -ml-62 border-1xl border-gray-200 bg-gray-100 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
 						size={20}
 					/>
 					<h1 className="-ml-45 -mt-25">{sales.sale}</h1>
@@ -30,14 +31,16 @@ export default function SalesDistr() {
 					<div className="relative">
 						<button
 							onClick={() => setOpen(v => !v)}
-							className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-16 -ml-80"
+							className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-16 -ml-80 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
 						>
 							{period.charAt(0).toUpperCase() + period.slice(1)}
 							<ChevronDown size={16} />
 						</button>
 
 						{open && (
-							<div className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-20">
+							<div className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-20 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary">
 								{(['daily', 'weekly', 'monthly', 'yearly'] as Period[]).map(
 									p => (
 										<button

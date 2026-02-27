@@ -44,14 +44,18 @@ export default function DashboardPage() {
 				<div className="relative">
 					<button
 						onClick={() => setOpen(v => !v)}
-						className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-9 ml-252 max-2xl:ml-160"
+						className="flex items-center text-gray-500 gap-2 px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-9 ml-252 max-2xl:ml-160 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
 					>
 						{period.charAt(0).toUpperCase() + period.slice(1)}
 						<ChevronDown size={16} />
 					</button>
 
 					{open && (
-						<div className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-20">
+						<div
+							className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-20 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
+						>
 							{(['daily', 'weekly', 'monthly', 'yearly'] as Period[]).map(p => (
 								<button
 									key={p}
@@ -71,7 +75,10 @@ export default function DashboardPage() {
 						</div>
 					)}
 				</div>
-				<button className="flex items-center text-gray-500 gap-2 px-15 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-9 ml-2 max-2xl:ml-2 max-2xl:-mt-9">
+				<button
+					className="flex items-center text-gray-500 gap-2 px-15 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-9 ml-2 max-2xl:ml-2 max-2xl:-mt-9 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
+				>
 					<span className="-ml-7">{filterName.name}</span>
 					<ListFilter
 						size={12}
@@ -79,7 +86,10 @@ export default function DashboardPage() {
 					/>
 				</button>
 
-				<button className="flex items-center text-gray-500 gap-2 px-17 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-9 ml-2">
+				<button
+					className="flex items-center text-gray-500 gap-2 px-17 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-9 ml-2 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
+				>
 					<span className="-ml-10">{Export.export}</span>
 					<Download
 						size={15}
@@ -90,7 +100,8 @@ export default function DashboardPage() {
 
 			<div className="border border-gray-200 p-3 w-100 rounded-[10px] ml-67 mt-5 max-2xl:-ml-3">
 				<Eye
-					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100"
+					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
 					size={20}
 				/>
 				<Info
@@ -109,7 +120,8 @@ export default function DashboardPage() {
 			</div>
 			<div className="border border-gray-200 p-3 w-100 rounded-[10px] ml-180 -mt-29 max-2xl:ml-101">
 				<Database
-					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100"
+					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
 					size={20}
 				/>
 				<Info
@@ -128,7 +140,8 @@ export default function DashboardPage() {
 			</div>
 			<div className="border border-gray-200 p-3 w-100 rounded-[10px] ml-290 -mt-29 max-2xl:ml-205">
 				<Waypoints
-					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100"
+					className="mt-2 ml-5 border-1xl border-gray-200 bg-gray-100 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
 					size={20}
 				/>
 				<Info
