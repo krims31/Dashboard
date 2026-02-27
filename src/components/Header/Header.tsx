@@ -19,7 +19,6 @@ function Header() {
 
 	const {
 		openNotification,
-		setNotificationOpen,
 		toggleNotification,
 		notificationRef
 	} = useNotification()
