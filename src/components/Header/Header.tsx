@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom'
 import { Notification } from '../../data/notification'
 import useNotification from '../../hooks/useNotification'
 import { headersName } from '../../types/headersName'
+import { Theme } from '../Context/ThemeContext'
 
 function Header() {
 	const navigate = useNavigate()
@@ -17,11 +18,8 @@ function Header() {
 	const [isLoggedIn, setIsLoggedIn] = useState(false)
 	const [selectedOption, setSelectedOption] = useState('')
 
-	const {
-		openNotification,
-		toggleNotification,
-		notificationRef
-	} = useNotification()
+	const { openNotification, toggleNotification, notificationRef } =
+		useNotification()
 
 	const handleLogout = async () => {
 		try {
@@ -51,9 +49,10 @@ function Header() {
 		}
 		checkAuth()
 	}, [])
+
 	return (
 		<>
-			<header className=" bg-white border-b border-gray-200 max-2xl:pl-64 pl-65">
+			<header className=" bg-white border-b border-gray-200 max-2xl:pl-64 pl-65 dark:bg-background/80 backdrop-blur-md transition-colors duration-300">
 				<div className="flex items-center justify-between px-4 md:px-6 py-3">
 					<div className="relative flex-1 max-w-xs">
 						<IoSearch
@@ -64,6 +63,7 @@ function Header() {
 							type="search"
 							placeholder={headersName.search}
 							className="
+							ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-all
 					bg-transparent
 					border border-gray-300
 					text-sm
@@ -81,6 +81,7 @@ function Header() {
 								size={20}
 								className="cursor-pointer"
 							/>
+							<Theme />
 							<div
 								className="relative inline-block"
 								ref={notificationRef}

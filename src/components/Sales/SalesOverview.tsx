@@ -7,7 +7,7 @@ import {
 	Trash2,
 	TrendingUp
 } from 'lucide-react'
-import { useRef, useState } from 'react'
+import { useDot } from '../../hooks/useDot'
 import { filterName } from '../../types/filterName'
 import type { ISales } from '../../types/sale'
 import { sort } from '../../types/sortName'
@@ -18,16 +18,7 @@ const sales: ISales = {
 }
 
 export default function SalesOverview() {
-	const [isOpen, setIsOpen] = useState<boolean>(false)
-	const menuRef = useRef(null)
-
-	const toggle = () => {
-		if (!isOpen) {
-			setIsOpen(true)
-		} else {
-			setIsOpen(false)
-		}
-	}
+	const { isOpen, toggle, menuRef } = useDot()
 
 	return (
 		<>

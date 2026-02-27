@@ -21,7 +21,7 @@ export default function Sidebar() {
 	return (
 		<>
 			<div
-				className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg p-6 z-50 transform transition-transform duration-300 ${
+				className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg p-6 z-50 transform transition-transform duration-300 dark:bg-sidebar text-gray-700 dark:text-sidebar-foreground border-r border-gray-200 dark:border-sidebar-border ${
 					isOpen ? 'translate-x-0' : '-translate-x-full'
 				}`}
 			>
@@ -29,12 +29,13 @@ export default function Sidebar() {
 
 				{/* General Section */}
 				<ul className="mb-6">
-					<h2 className="text-gray-500 uppercase text-xs mb-2">
+					<h2 className="text-gray-500 uppercase text-xs mb-2 dark:text-muted-foreground">
 						{sidebarName.general}
 					</h2>
 					<li>
 						<Link
-							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
+							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100
+							text-gray-700 hover:text-black dark:hover:bg-sidebar-accent transition-colors dark:text-sidebar-foreground dark:hover:text-white"
 							to="/dashboard"
 						>
 							<MdSpaceDashboard />
@@ -43,7 +44,7 @@ export default function Sidebar() {
 					</li>
 					<li>
 						<Link
-							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
+							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
 							to="/payment"
 						>
 							<MdOutlinePayment />
@@ -52,7 +53,7 @@ export default function Sidebar() {
 					</li>
 					<li>
 						<Link
-							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
+							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
 							to="/customers"
 						>
 							<AiOutlineCustomerService />
@@ -61,7 +62,7 @@ export default function Sidebar() {
 					</li>
 					<li>
 						<Link
-							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
+							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black" 
 							to="/messages"
 						>
 							<LuMessageSquareDot />
@@ -72,7 +73,7 @@ export default function Sidebar() {
 
 				{/* Tools Section */}
 				<ul className="mb-6">
-					<h2 className="text-gray-500 uppercase text-xs mb-2">
+					<h2 className="text-gray-500 uppercase text-xs mb-2 dark:hover:text-black">
 						{sidebarName.tools}
 					</h2>
 					<li>
@@ -86,7 +87,7 @@ export default function Sidebar() {
 					</li>
 					<li>
 						<a
-							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
+							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
 							href="#"
 						>
 							<LiaFileInvoiceSolid />
@@ -95,7 +96,7 @@ export default function Sidebar() {
 					</li>
 					<li>
 						<a
-							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
+							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
 							href="#"
 						>
 							<IoAnalytics />
@@ -104,7 +105,7 @@ export default function Sidebar() {
 					</li>
 					<li>
 						<a
-							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
+							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
 							href="#"
 						>
 							<TbAutomation />
@@ -121,7 +122,7 @@ export default function Sidebar() {
 					</h2>
 					<li>
 						<a
-							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
+							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
 							href="#"
 						>
 							<IoSettingsOutline />
@@ -130,7 +131,7 @@ export default function Sidebar() {
 					</li>
 					<li>
 						<a
-							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
+							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
 							href="#"
 						>
 							<AiTwotoneSecurityScan />
@@ -140,7 +141,7 @@ export default function Sidebar() {
 					</li>
 					<li>
 						<a
-							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
+							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
 							href="#"
 						>
 							<IoIosHelpCircleOutline />
@@ -151,7 +152,7 @@ export default function Sidebar() {
 
 				{/* Upgrade Plan Button */}
 				<div className="mt-auto mb-6">
-					<button className="w-full mt-50 bg-transparent border-white text-black py-1 px-4 rounded transition hover:bg-gray-100">
+					<button className="w-full mt-50 bg-transparent border-white text-black py-1 px-4 rounded transition hover:bg-gray-100 dark:bg-black dark:hover:bg-black dark:text-white">
 						Upgrade Plan
 					</button>
 				</div>

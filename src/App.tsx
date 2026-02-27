@@ -1,14 +1,17 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Login from './auth/Login'
+import { ThemeProvider } from './components/Context/ThemeProvider'
 import Header from './components/Header/Header'
 import Sidebar from './components/Sidebar/Sidebar'
 import DashboardPage from './pages/DashboardPage'
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => (
 	<div className="app-wrapper">
-		<Header />
-		<div className="flex">
+		<ThemeProvider>
+			<Header />
+		</ThemeProvider>
+		<div className="flex ">
 			<Sidebar />
 			<main className="flex-1 p-6">{children}</main>
 		</div>
@@ -39,7 +42,11 @@ function App() {
 
 			<Route
 				path="*"
-				element={<div className="flex justify-center text-center mt-100 text-3xl ">404 - Страница не найдена</div>}
+				element={
+					<div className="flex justify-center text-center mt-100 text-3xl ">
+						404 - Страница не найдена
+					</div>
+				}
 			/>
 		</Routes>
 	)
