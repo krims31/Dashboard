@@ -38,7 +38,7 @@ export default function SalesOverview() {
 					/>
 				</button>
 				<RealtimeChart />
-				<button className="flex items-center text-gray-500 gap-2 px-15 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-113 ml-140 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+				<button className="flex items-center text-gray-500 gap-2 px-15 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-110 ml-140 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
     dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary">
 					<span className="-ml-7">{filterName.name}</span>
 					<ListFilter

@@ -94,42 +94,39 @@ function Header() {
 										size={20}
 										className="cursor-pointer"
 									/>
+									<span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
 								</button>
 
 								{openNotification && (
-									<div className="absolute right-0 mt-1 w-40 bg-white border border-gray-300 rounded-md shadow-lg z-50 overflow-hidden">
-										<button
-											onClick={() => {
-												console.log('Notification')
-												toggleNotification()
-											}}
-											className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 gap-2"
-										>
-											<span>{Notification.notification}</span>
-										</button>
+									<div className="absolute right-0 mt-2 w-80 bg-white border border-gray-200 rounded-xl shadow-2xl z-50 overflow-hidden">
+										<div className="px-4 py-3 border-b border-gray-100 bg-gray-50/50">
+											<h3 className="text-sm font-semibold text-gray-800">
+												Notification
+											</h3>
+										</div>
 
-										<div className="border-t border-gray-100"></div>
+										<div className="max-h-100 overflow-y-auto">
+											<button
+												onClick={() => {
+													console.log('Notification')
+													toggleNotification()
+												}}
+												className="flex flex-col w-full px-4 py-3 text-left hover:bg-blue-50 transition-colors border-b border-gray-50 last:border-0"
+											>
+												<span className="text-xs font-medium text-blue-600 mb-1">
+													{Notification.title || 'Системное'}
+												</span>
+												<span className="text-sm text-gray-800 font-normal leading-snug">
+													{Notification.notification || 'Новое сообщение'}
+												</span>
+												<span className="text-[11px] text-gray-400 mt-2">
+													{Notification.description || '2 минуты назад'}
+												</span>
+											</button>
+										</div>
 
-										<button
-											onClick={() => {
-												console.log('Notification')
-												toggleNotification()
-											}}
-											className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 gap-2"
-										>
-											<span>{Notification.title}</span>
-										</button>
-
-										<div className="border-t border-gray-100"></div>
-
-										<button
-											onClick={() => {
-												console.log('Notification')
-												toggleNotification()
-											}}
-											className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 gap-2"
-										>
-											<span>{Notification.description}</span>
+										<button className="w-full py-2 text-xs text-center text-blue-600 font-medium hover:bg-gray-50 border-t border-gray-100">
+											Показать все
 										</button>
 									</div>
 								)}

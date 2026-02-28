@@ -54,7 +54,7 @@ export default function DashboardPage() {
 					{open && (
 						<div
 							className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-20 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
-    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
+    dark:hover:bg-sidebar-accent dark:hover:text-black dark:hover:border-primary"
 						>
 							{(['daily', 'weekly', 'monthly', 'yearly'] as Period[]).map(p => (
 								<button
