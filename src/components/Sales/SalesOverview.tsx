@@ -38,16 +38,20 @@ export default function SalesOverview() {
 					/>
 				</button>
 				<RealtimeChart />
-				<button className="flex items-center text-gray-500 gap-2 px-15 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-110 ml-140 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
-    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary">
+				<button
+					className="flex items-center text-gray-500 gap-2 px-15 py-1.5 pr-3 text-sm border border-gray-300 rounded-md hover:bg-black -mt-110 ml-140 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
+				>
 					<span className="-ml-7">{filterName.name}</span>
 					<ListFilter
 						size={12}
 						className="-ml-14"
 					/>
 				</button>
-				<button className="flex items-center text-gray-500 gap-2 px-15 py-1.5 pr-3 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 -mt-8.5 ml-161 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
-    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary">
+				<button
+					className="flex items-center text-gray-500 gap-2 px-15 py-1.5 pr-3 text-sm border border-gray-300 rounded-md hover:bg-black -mt-8.5 ml-161 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
+				>
 					<span className="-ml-7">{sort.sort}</span>
 					<ArrowUpDown
 						size={15}
@@ -60,7 +64,7 @@ export default function SalesOverview() {
 				>
 					<button
 						onClick={toggle}
-						className="flex items-center text-gray-500 gap-2 px-2 py-2 text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 relative -top-8 ml-181 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+						className="flex items-center text-gray-500 gap-2 px-2 py-2 text-sm border border-gray-300 rounded-md hover:bg-black relative -top-8 ml-181 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
     dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
 					>
 						<Ellipsis

@@ -23,11 +23,13 @@ export default function ListIntegration() {
 					size={20}
 				/>
 				<h1 className="ml-15 -mt-5.5">{list.sale}</h1>
-				<p className="ml-160 -mt-6 text-[#887CFD] hover:text-[black] cursor-pointer transition 0.3s ease transform duration-300 max-2xl:ml-150">
+				<p className="ml-160 -mt-6 text-[#887CFD] hover:text-[black] cursor-pointer transition 0.3s ease transform duration-300 max-2xl:ml-150 dark:hover:text-white">
 					{list.seeall}
 				</p>
-				<div className="border border-gray-100 bg-gray-50 rounded-sm mt-1 w-full h-8 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
-    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary">
+				<div
+					className="border border-gray-100 bg-gray-50 rounded-sm mt-1 w-full h-8 dark:bg-sidebar dark:text-muted-foreground dark:border-sidebar-border
+    dark:hover:bg-sidebar-accent dark:hover:text-white dark:hover:border-primary"
+				>
 					<input
 						type="checkbox"
 						className="h-4 w-4 mt-2 ml-5 border-2 border-gray-400 rounded-sm"
@@ -50,7 +52,9 @@ export default function ListIntegration() {
 						className="w-20 h-1 ml-95 max-2xl:mt-0 absolute top-214 accent-[#887CFD] cursor-pointer"
 					/>
 
-					<p className="text-sm text-gray-500 -mt-7 ml-85 text-center max-2xl:ml-100 max-2xl:-mt-6">40%</p>
+					<p className="text-sm text-gray-500 -mt-7 ml-85 text-center max-2xl:ml-100 max-2xl:-mt-6">
+						40%
+					</p>
 
 					<p className="text-md text-gray-500 -mt-5 -ml-12 text-center">
 						{list.finance}
@@ -77,7 +81,9 @@ export default function ListIntegration() {
 						value="80"
 						className="w-20 h-1 ml-95 absolute top-224 accent-[#887CFD] cursor-pointer"
 					/>
-					<p className="text-sm text-gray-500 -mt-6 ml-85 text-center max-2xl:ml-100 max-2xl:-mt-6">80%</p>
+					<p className="text-sm text-gray-500 -mt-6 ml-85 text-center max-2xl:ml-100 max-2xl:-mt-6">
+						80%
+					</p>
 
 					<p className="text-md text-gray-500 -mt-6 -ml-12 text-center">
 						{list.marketplace}
