@@ -3,19 +3,20 @@ import './App.css'
 import Login from './auth/Login'
 import { ThemeProvider } from './components/Context/ThemeProvider'
 import Header from './components/Header/Header'
+import Settings from './components/Settings/Settings'
 import Sidebar from './components/Sidebar/Sidebar'
 import DashboardPage from './pages/DashboardPage'
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => (
-	<div className="app-wrapper">
-		<ThemeProvider>
+	<ThemeProvider>
+		<div className="app-wrapper">
 			<Header />
-		</ThemeProvider>
-		<div className="flex ">
-			<Sidebar />
-			<main className="flex-1 p-6">{children}</main>
+			<div className="flex">
+				<Sidebar />
+				<main className="flex-1 p-6">{children}</main>
+			</div>
 		</div>
-	</div>
+	</ThemeProvider>
 )
 
 function App() {
@@ -24,6 +25,15 @@ function App() {
 			<Route
 				path="/login"
 				element={<Login />}
+			/>
+
+			<Route
+				path="/settings"
+				element={
+					<DashboardLayout>
+						<Settings />
+					</DashboardLayout>
+				}
 			/>
 
 			<Route

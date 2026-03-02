@@ -62,7 +62,7 @@ export default function Sidebar() {
 					</li>
 					<li>
 						<Link
-							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black" 
+							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
 							to="/messages"
 						>
 							<LuMessageSquareDot />
@@ -77,41 +77,41 @@ export default function Sidebar() {
 						{sidebarName.tools}
 					</h2>
 					<li>
-						<a
+						<Link
 							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
-							href="#"
+							to="/product"
 						>
 							<AiOutlineProduct />
 							{sidebarName.product}
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a
+						<Link
 							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
-							href="#"
+							to="/invoice"
 						>
 							<LiaFileInvoiceSolid />
 							{sidebarName.invoice}
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a
+						<Link
 							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
-							href="#"
+							to="/analytics"
 						>
 							<IoAnalytics />
 							{sidebarName.analytics}
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a
+						<Link
 							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
-							href="#"
+							to="/automation"
 						>
 							<TbAutomation />
 
 							{sidebarName.automation}
-						</a>
+						</Link>
 					</li>
 				</ul>
 
@@ -121,32 +121,32 @@ export default function Sidebar() {
 						{sidebarName.support}
 					</h2>
 					<li>
-						<a
+						<Link
 							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
-							href="#"
+							to="/settings"
 						>
 							<IoSettingsOutline />
 							{sidebarName.settings}
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a
+						<Link
 							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
-							href="#"
+							to="/security"
 						>
 							<AiTwotoneSecurityScan />
 
 							{sidebarName.security}
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a
+						<Link
 							className="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:text-black"
-							href="#"
+							to="/help"
 						>
 							<IoIosHelpCircleOutline />
 							{sidebarName.help}
-						</a>
+						</Link>
 					</li>
 				</ul>
 
